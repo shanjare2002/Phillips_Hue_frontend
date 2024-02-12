@@ -1,19 +1,19 @@
 :root {
-  font-family: "Achates Heavy";
+  font-family: "helvetica";
   line-height: 1.5;
   font-weight: 400;
   font-size: small;
-  height: max-content;
-  width: max-content;
   color-scheme: light dark;
   color: rgba(106, 106, 106, 0.87);
   background-color: #201e28;
   text-align: center;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,11 +30,6 @@ a:hover {
 }
 body {
   margin: 0;
-
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
