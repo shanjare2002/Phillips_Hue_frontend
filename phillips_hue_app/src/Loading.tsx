@@ -29,12 +29,8 @@ const Loading: React.FC = () => {
               try {
                 const hasData = await fetchHubData();
                 if (hasData) {
-                  // Navigate to the desired route if hasData is true
                   navigate('/' + path_success);
-                } else {
-                  // Navigate to a different route if hasData is false
-                  navigate('/fallback-route');
-                }
+                } 
               } catch (error) {
                 // Handle any other errors here
               }
