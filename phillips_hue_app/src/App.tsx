@@ -1,6 +1,6 @@
 
 import Loading from './Loading.tsx';
-import DiscoverButton from './discoverButton.tsx'; 
+import DiscoverButton from './discoverButton.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Progress_Bar from './Progress_Bar.tsx';
 import Found from './Found.tsx';

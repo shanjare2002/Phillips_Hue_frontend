@@ -1,5 +1,5 @@
+import React from 'react';
 const Found = () => {
-
 return(
 <>
 <p className='absolute top-1/3 left-1/2  transform -translate-x-1/2 -translate-y-1/2  font-helvetica font-bold text-5xl text-white '> Click the Hue button to authorize </p>

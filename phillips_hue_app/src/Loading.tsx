@@ -9,29 +9,39 @@ const fetchHubData = async () => {
         const response = await axios.get('http://localhost:8080/hubAddress');
         if(response.status === 200){
             console.log(response.data);
-            return response.data;
+        if (response.data.trim() !== '') {
+            return true;
+        } else {
+            return false;
+        }
         }
     }
     catch(error){
-        alert("Server Error")
+        alert("Server Error");
     }
 }
-const Loading: React.FC = () => {
-    // const navigate = useNavigate();
-    // const navigatePage =async () => {
-    //     if(await fetchHubData()){
-    //             navigate('/foundBridge');
-    //     }
-    //     else{
+const path_success:string = "foundBridge";
 
-    //     }
-    // }
+const Loading: React.FC = () => {
+    const navigate = useNavigate();
     useEffect(() => {
-        tries += 1;
-        if(tries < 2){ 
-            fetchHubData();
-        }
-    },[]);
+            const fetchData = async () => {
+              try {
+                const hasData = await fetchHubData();
+                if (hasData) {
+                  // Navigate to the desired route if hasData is true
+                  navigate('/' + path_success);
+                } else {
+                  // Navigate to a different route if hasData is false
+                  navigate('/fallback-route');
+                }
+              } catch (error) {
+                // Handle any other errors here
+              }
+            };
+        
+            fetchData();
+          }, [navigate]);
   return (
     <>
     <p className='absolute top-1/3 left-1/2  transform -translate-x-1/2 -translate-y-1/2  font-helvetica font-bold text-5xl text-white '> Discovering Hue  .......... </p>

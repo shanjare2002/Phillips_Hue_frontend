@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
-
-
+import React from 'react';
 const Progress_Bar = () => {
     const location = useLocation();
     function bar_color(flag:number):string{
