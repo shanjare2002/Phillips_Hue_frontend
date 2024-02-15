@@ -1,12 +1,11 @@
 import React from 'react';
 import { BarLoader } from 'react-spinners';
 import axios from 'axios';
-import { useEffect } from 'react';
-var tries: number = 0;
+import { useEffect } from 'react'; 
 import {useNavigate} from 'react-router-dom'
 const fetchHubData = async () => {
     try{
-        const response = await axios.get('http://localhost:8080/hubAddress');
+        const response = await axios.get('http://localhost:8080/api/hubAddress');
         if(response.status === 200){
             console.log(response.data);
         if (response.data.trim() !== '') {
@@ -32,7 +31,7 @@ const Loading: React.FC = () => {
                   navigate('/' + path_success);
                 } 
               } catch (error) {
-                // Handle any other errors here
+    
               }
             };
         

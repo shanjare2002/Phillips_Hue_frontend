@@ -4,6 +4,7 @@ import DiscoverButton from './discoverButton.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Progress_Bar from './Progress_Bar.tsx';
 import Found from './Found.tsx';
+import LightsHome from './lightsHome.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/foundBridge",
     element :<> <Progress_Bar/><Found/></> 
+  },
+  {
+    path: "/lightsHome",
+    element :<> <LightsHome/></>	
   }
 ]);
 
